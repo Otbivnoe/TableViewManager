@@ -12,5 +12,5 @@ import UIKit
 protocol NUIHeightConfiguratorProtocol {
     
     associatedtype T
-    func configureHeightBy(tableView: UITableView, indexPath: NSIndexPath, viewModel: T) -> CGFloat
+    static func configureHeightBy(tableView: UITableView, indexPath: NSIndexPath, viewModel: T) -> CGFloat
 }

@@ -10,12 +10,13 @@ import UIKit
 
 class NUITableViewCellItem<CellType: NUIViewModelBindingProtocol, ViewModelType where CellType: UITableViewCell, CellType.T == ViewModelType> : NSObject {
     
-    let fromNib: Bool
-    let viewModel: ViewModelType
+    var fromNib: Bool
+    var viewModel: ViewModelType
+    
     private var heightConfigurator: (UITableView, NSIndexPath, ViewModelType) -> (CGFloat)
     
     convenience init<HeightConfiguratorType: NUIHeightConfiguratorProtocol where HeightConfiguratorType.T == ViewModelType>
-        (cellHeightConfigurator: HeightConfiguratorType, viewModel: ViewModelType, fromNib: Bool) {
+        (cellHeightConfigurator: HeightConfiguratorType.Type, viewModel: ViewModelType, fromNib: Bool) {
         
         self.init(viewModel, fromNib, { (tableView, indexPath, viewModel) -> CGFloat in
             cellHeightConfigurator.configureHeightBy(tableView: tableView, indexPath: indexPath, viewModel: viewModel)

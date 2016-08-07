@@ -12,6 +12,9 @@
 		1129BD241D5775ED002FD850 /* NUITableViewCellItemProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1129BD231D5775ED002FD850 /* NUITableViewCellItemProtocol.swift */; };
 		1129BD261D577628002FD850 /* NUIViewModelBindingProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1129BD251D577628002FD850 /* NUIViewModelBindingProtocol.swift */; };
 		1129BD281D5779B4002FD850 /* NUIHeightConfiguratorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1129BD271D5779B4002FD850 /* NUIHeightConfiguratorProtocol.swift */; };
+		1129BD2A1D578DB9002FD850 /* TestTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1129BD291D578DB9002FD850 /* TestTableViewCell.swift */; };
+		1129BD2C1D578DCA002FD850 /* TestHeightConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1129BD2B1D578DCA002FD850 /* TestHeightConfigurator.swift */; };
+		1129BD2E1D578DDF002FD850 /* TestViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1129BD2D1D578DDF002FD850 /* TestViewModel.swift */; };
 		11FC4D921D57417900629F1C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FC4D911D57417900629F1C /* AppDelegate.swift */; };
 		11FC4D941D57417900629F1C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FC4D931D57417900629F1C /* ViewController.swift */; };
 		11FC4D971D57417900629F1C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11FC4D951D57417900629F1C /* Main.storyboard */; };
@@ -25,6 +28,9 @@
 		1129BD231D5775ED002FD850 /* NUITableViewCellItemProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NUITableViewCellItemProtocol.swift; sourceTree = "<group>"; };
 		1129BD251D577628002FD850 /* NUIViewModelBindingProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NUIViewModelBindingProtocol.swift; sourceTree = "<group>"; };
 		1129BD271D5779B4002FD850 /* NUIHeightConfiguratorProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NUIHeightConfiguratorProtocol.swift; sourceTree = "<group>"; };
+		1129BD291D578DB9002FD850 /* TestTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestTableViewCell.swift; sourceTree = "<group>"; };
+		1129BD2B1D578DCA002FD850 /* TestHeightConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestHeightConfigurator.swift; sourceTree = "<group>"; };
+		1129BD2D1D578DDF002FD850 /* TestViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestViewModel.swift; sourceTree = "<group>"; };
 		11FC4D8E1D57417900629F1C /* TableViewManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TableViewManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		11FC4D911D57417900629F1C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		11FC4D931D57417900629F1C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -76,6 +82,9 @@
 		11FC4D901D57417900629F1C /* TableViewManager */ = {
 			isa = PBXGroup;
 			children = (
+				1129BD291D578DB9002FD850 /* TestTableViewCell.swift */,
+				1129BD2B1D578DCA002FD850 /* TestHeightConfigurator.swift */,
+				1129BD2D1D578DDF002FD850 /* TestViewModel.swift */,
 				1129BD1E1D577541002FD850 /* TableViewManager */,
 				11FC4D911D57417900629F1C /* AppDelegate.swift */,
 				11FC4D931D57417900629F1C /* ViewController.swift */,
@@ -160,10 +169,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				1129BD241D5775ED002FD850 /* NUITableViewCellItemProtocol.swift in Sources */,
+				1129BD2C1D578DCA002FD850 /* TestHeightConfigurator.swift in Sources */,
+				1129BD2E1D578DDF002FD850 /* TestViewModel.swift in Sources */,
 				1129BD201D577558002FD850 /* NUITableViewManager.swift in Sources */,
 				11FC4D941D57417900629F1C /* ViewController.swift in Sources */,
 				11FC4D921D57417900629F1C /* AppDelegate.swift in Sources */,
 				1129BD221D5775C1002FD850 /* NUITableViewCellItem.swift in Sources */,
+				1129BD2A1D578DB9002FD850 /* TestTableViewCell.swift in Sources */,
 				1129BD281D5779B4002FD850 /* NUIHeightConfiguratorProtocol.swift in Sources */,
 				1129BD261D577628002FD850 /* NUIViewModelBindingProtocol.swift in Sources */,
 			);
