@@ -9,5 +9,5 @@
 protocol NUIViewModelBindingProtocol {
     
     associatedtype T
-    func configureBy(viewModel: T);
+    func configureBy(_ viewModel: T);
 }

@@ -15,5 +15,5 @@ protocol NUITableViewCellItemProtocol {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
-    
+    func registerCellForTableView(_ tableView: UITableView)
 }
