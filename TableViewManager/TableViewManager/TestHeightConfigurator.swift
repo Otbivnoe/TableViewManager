@@ -13,11 +13,11 @@ class TestHeightConfigurator: NSObject, NUICellItemHeightProtocol, NUISectionIte
 
     typealias T = TestViewModel
     
-    class func configureHeightBy(tableView: UITableView, indexPath: NSIndexPath, viewModel: TestViewModel?) -> CGFloat {
-        return 0
+    func configureHeightBy(tableView: UITableView, indexPath: NSIndexPath, viewModel: TestViewModel?) -> CGFloat {
+        return 100
     }
     
-    func tableView(_ tableView: UITableView, heightForSectionIndex index: Int) -> CGFloat {
+    func configureHeightBy(tableView: UITableView, heightForSectionIndex index: Int) -> CGFloat {
         return 10
     }
     

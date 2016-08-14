@@ -88,7 +88,7 @@ class NUITableViewSectionItem: NSObject, NUITableViewSectionItemProtocol {
         }
         
         if let configurator = sectionItem.heightConfigurator {
-            return configurator.tableView(tableView, heightForSectionIndex: sectionIndex)
+            return configurator.configureHeightBy(tableView: tableView, heightForSectionIndex: sectionIndex)
         }
         return 0
     }

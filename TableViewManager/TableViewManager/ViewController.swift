@@ -48,12 +48,17 @@ class ViewController: UIViewController {
         var viewModel2 = TestViewModel()
         viewModel2.name = "Test2"
         
+        var viewModel3 = TestViewModel()
+        viewModel3.name = "Test3"
+        
         let cellItem1 = NUITableViewCellItem<TestTableViewCell, TestViewModel>(height: 50, viewModel: viewModel1)
         let cellItem2 = TestCellItem(height: 50, viewModel: viewModel2)
+        let cellItem3 = TestCellItem(cellHeightConfigurator: TestHeightConfigurator(), viewModel: viewModel3)
 
         var cellItems = [NUITableViewCellItemProtocol]()
         cellItems.append(cellItem1)
         cellItems.append(cellItem2)
+        cellItems.append(cellItem3)
         
         
         let sectionItem = NUITableViewSectionItem(cellItems)

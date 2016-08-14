@@ -10,5 +10,5 @@ import UIKit
 
 protocol NUISectionItemHeightProtocol {
     
-    func tableView(_ tableView: UITableView, heightForSectionIndex index: Int) -> CGFloat
+    func configureHeightBy(tableView: UITableView, heightForSectionIndex index: Int) -> CGFloat
 }
