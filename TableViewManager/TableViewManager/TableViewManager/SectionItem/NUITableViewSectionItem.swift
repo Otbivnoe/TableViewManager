@@ -13,7 +13,7 @@ enum NUIAccessoryViewType {
     case NUIAccessoryViewTypeHeader
 }
 
-class NUITableViewSectionItem: NSObject, NUITableViewSectionItemProtocol {
+class NUITableViewSectionItem: NUITableViewSectionItemProtocol {
 
     var cellItems: [NUITableViewCellItemProtocol]
     
@@ -24,9 +24,9 @@ class NUITableViewSectionItem: NSObject, NUITableViewSectionItemProtocol {
     
     private var configurator = [NUIAccessoryViewType : NUITableViewSectionItem]()
     
-    override init() {
+    convenience init() {
         
-        self.cellItems = []
+        self.init([])
     }
     
     init(_ cellItems: [NUITableViewCellItemProtocol]) {

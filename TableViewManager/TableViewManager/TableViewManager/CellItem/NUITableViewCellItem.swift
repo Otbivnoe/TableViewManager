@@ -8,7 +8,7 @@
 
 import UIKit
 
-class NUITableViewCellItem<CellType: NUIViewModelBindingProtocol, ViewModelType where CellType: UITableViewCell, CellType.ViewModelType == ViewModelType> : NSObject, NUITableViewCellItemProtocol {
+class NUITableViewCellItem<CellType: NUIViewModelBindingProtocol, ViewModelType where CellType: UITableViewCell, CellType.ViewModelType == ViewModelType> : NUITableViewCellItemProtocol {
     
     private var fromNib: Bool
     var viewModel: ViewModelType
