@@ -9,12 +9,16 @@
 import Foundation
 import UIKit
 
-class TestHeightConfigurator: NSObject, NUIHeightConfiguratorProtocol {
+class TestHeightConfigurator: NSObject, NUICellItemHeightProtocol, NUISectionItemHeightProtocol {
 
     typealias T = TestViewModel
     
-    class func configureHeightBy(tableView: UITableView, indexPath: NSIndexPath, viewModel: TestViewModel) -> CGFloat {
+    class func configureHeightBy(tableView: UITableView, indexPath: NSIndexPath, viewModel: TestViewModel?) -> CGFloat {
         return 0
+    }
+    
+    func tableView(_ tableView: UITableView, heightForSectionIndex index: Int) -> CGFloat {
+        return 10
     }
     
 }

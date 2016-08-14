@@ -18,7 +18,6 @@ class ViewController: UIViewController {
     required init?(coder aDecoder: NSCoder) {
         
         tableViewManager = NUITableViewManager(tableView: tableView)
-        
         super.init(coder: aDecoder)
     }
     
@@ -56,7 +55,20 @@ class ViewController: UIViewController {
         cellItems.append(cellItem1)
         cellItems.append(cellItem2)
         
-        tableViewManager.sectionItems = [NUITableViewSectionItem(cellItems)]
+        
+        let sectionItem = NUITableViewSectionItem(cellItems)
+        
+        sectionItem.configureAccessoryViewType(.NUIAccessoryViewTypeHeader, configurate: { section in
+            section.height = 20
+            section.title = "Header"
+        })
+        
+        sectionItem.configureAccessoryViewType(.NUIAccessoryViewTypeFooter, configurate: { section in
+            section.heightConfigurator = TestHeightConfigurator()
+            section.title = "Footer"
+        })
+        
+        tableViewManager.sectionItems = [sectionItem]
     }
 
 }

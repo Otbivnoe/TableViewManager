@@ -17,7 +17,7 @@ class NUITableViewCellItem<CellType: NUIViewModelBindingProtocol, ViewModelType 
     
     //MARK: Initialize
     
-    convenience init<HeightConfiguratorType: NUIHeightConfiguratorProtocol where HeightConfiguratorType.T == ViewModelType> (cellHeightConfigurator: HeightConfiguratorType.Type, viewModel: ViewModelType, fromNib: Bool) {
+    convenience init<HeightConfiguratorType: NUICellItemHeightProtocol where HeightConfiguratorType.T == ViewModelType> (cellHeightConfigurator: HeightConfiguratorType.Type, viewModel: ViewModelType, fromNib: Bool) {
         
         self.init(viewModel, fromNib, { tableView, indexPath, viewModel -> CGFloat in
             cellHeightConfigurator.configureHeightBy(tableView: tableView, indexPath: indexPath, viewModel: viewModel)
