@@ -13,7 +13,7 @@ class NUITableViewManager: NSObject, UITableViewDelegate, UITableViewDataSource 
     unowned var tableView: UITableView
     var sectionItems:      [NUITableViewSectionItemProtocol]? {
         willSet {
-            registerSectionItems(newValue!)
+            registerSectionItems(newValue ?? [])
         }
         didSet {
             tableView.reloadData()
