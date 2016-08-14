@@ -48,8 +48,8 @@ class ViewController: UIViewController {
         var viewModel2 = TestViewModel()
         viewModel2.name = "Test2"
         
-        let cellItem1 = NUITableViewCellItem<TestTableViewCell, TestViewModel>(height: 50, viewModel: viewModel1, fromNib: false)
-        let cellItem2 = TestCellItem(height: 50, viewModel: viewModel2, fromNib: false)
+        let cellItem1 = NUITableViewCellItem<TestTableViewCell, TestViewModel>(height: 50, viewModel: viewModel1)
+        let cellItem2 = TestCellItem(height: 50, viewModel: viewModel2)
 
         var cellItems = [NUITableViewCellItemProtocol]()
         cellItems.append(cellItem1)
