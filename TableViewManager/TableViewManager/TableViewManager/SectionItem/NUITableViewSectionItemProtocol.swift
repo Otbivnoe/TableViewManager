@@ -9,14 +9,16 @@
 import Foundation
 import UIKit
 
-protocol NUITableViewSectionItemProtocol {
+@objc protocol NUITableViewSectionItemProtocol {
 
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String?
-    func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String?
+    var cellItems: [NUITableViewCellItemProtocol] { get set}
+    
+    @objc optional func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String?
+    @objc optional func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String?
 
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat
-    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat
+    @objc optional func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat
+    @objc optional func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat
 
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView?
-    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView?
+    @objc optional func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView?
+    @objc optional func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView?
 }

@@ -23,6 +23,7 @@ class TestTableViewCell: UITableViewCell {
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
     
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        contentView.backgroundColor = UIColor.yellow
         contentView.addSubview(nameLabel)
     }
     

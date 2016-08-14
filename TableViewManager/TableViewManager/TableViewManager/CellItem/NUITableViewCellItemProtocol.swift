@@ -9,9 +9,11 @@
 import Foundation
 import UIKit
 
-protocol NUITableViewCellItemProtocol {
+@objc protocol NUITableViewCellItemProtocol {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
     func registerCellForTableView(_ tableView: UITableView)
+    
+    @objc optional func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath)
 }

@@ -18,7 +18,7 @@ class TestHeightConfigurator: NSObject, NUICellItemHeightProtocol, NUISectionIte
     }
     
     func configureHeightBy(tableView: UITableView, heightForSectionIndex index: Int) -> CGFloat {
-        return 10
+        return 30
     }
     
 }

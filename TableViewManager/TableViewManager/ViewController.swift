@@ -63,13 +63,16 @@ class ViewController: UIViewController {
         
         let sectionItem = NUITableViewSectionItem(cellItems)
         
+        let view = UIView()
+        view.backgroundColor = UIColor.red
+        
         sectionItem.configureAccessoryViewType(.NUIAccessoryViewTypeHeader, configurate: { section in
-            section.height = 20
-            section.title = "Header"
+            section.heightConfigurator = TestHeightConfigurator()
+            section.accessoryView = view
         })
         
         sectionItem.configureAccessoryViewType(.NUIAccessoryViewTypeFooter, configurate: { section in
-            section.heightConfigurator = TestHeightConfigurator()
+            section.height = 50
             section.title = "Footer"
         })
         

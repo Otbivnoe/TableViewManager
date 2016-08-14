@@ -10,6 +10,7 @@
 		1129BD2A1D578DB9002FD850 /* TestTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1129BD291D578DB9002FD850 /* TestTableViewCell.swift */; };
 		1129BD2C1D578DCA002FD850 /* TestHeightConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1129BD2B1D578DCA002FD850 /* TestHeightConfigurator.swift */; };
 		1129BD2E1D578DDF002FD850 /* TestViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1129BD2D1D578DDF002FD850 /* TestViewModel.swift */; };
+		112C0E0B1D60B43B0008D5DD /* TestHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112C0E0A1D60B43B0008D5DD /* TestHeaderView.swift */; };
 		11AB0F291D6072FD00AC8909 /* TestCellItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11AB0F281D6072FD00AC8909 /* TestCellItem.swift */; };
 		11AB0F5C1D60A60500AC8909 /* NUICellItemHeightProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11AB0F531D60A60500AC8909 /* NUICellItemHeightProtocol.swift */; };
 		11AB0F5D1D60A60500AC8909 /* NUITableViewCellItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11AB0F541D60A60500AC8909 /* NUITableViewCellItem.swift */; };
@@ -30,6 +31,7 @@
 		1129BD291D578DB9002FD850 /* TestTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestTableViewCell.swift; sourceTree = "<group>"; };
 		1129BD2B1D578DCA002FD850 /* TestHeightConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestHeightConfigurator.swift; sourceTree = "<group>"; };
 		1129BD2D1D578DDF002FD850 /* TestViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestViewModel.swift; sourceTree = "<group>"; };
+		112C0E0A1D60B43B0008D5DD /* TestHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestHeaderView.swift; sourceTree = "<group>"; };
 		11AB0F281D6072FD00AC8909 /* TestCellItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestCellItem.swift; sourceTree = "<group>"; };
 		11AB0F531D60A60500AC8909 /* NUICellItemHeightProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NUICellItemHeightProtocol.swift; sourceTree = "<group>"; };
 		11AB0F541D60A60500AC8909 /* NUITableViewCellItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NUITableViewCellItem.swift; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 			children = (
 				11AB0F511D60A60500AC8909 /* TableViewManager */,
 				1129BD291D578DB9002FD850 /* TestTableViewCell.swift */,
+				112C0E0A1D60B43B0008D5DD /* TestHeaderView.swift */,
 				1129BD2B1D578DCA002FD850 /* TestHeightConfigurator.swift */,
 				1129BD2D1D578DDF002FD850 /* TestViewModel.swift */,
 				11AB0F281D6072FD00AC8909 /* TestCellItem.swift */,
@@ -202,6 +205,7 @@
 				11AB0F291D6072FD00AC8909 /* TestCellItem.swift in Sources */,
 				11AB0F5D1D60A60500AC8909 /* NUITableViewCellItem.swift in Sources */,
 				11FC4D941D57417900629F1C /* ViewController.swift in Sources */,
+				112C0E0B1D60B43B0008D5DD /* TestHeaderView.swift in Sources */,
 				11AB0F5C1D60A60500AC8909 /* NUICellItemHeightProtocol.swift in Sources */,
 				11AB0F621D60A60500AC8909 /* NUITableViewSectionItem.swift in Sources */,
 				11AB0F601D60A60500AC8909 /* NUIViewModelBindingProtocol.swift in Sources */,
