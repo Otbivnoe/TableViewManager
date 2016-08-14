@@ -8,6 +8,7 @@
 
 import UIKit
 
-class TestViewModel: NSObject {
+struct TestViewModel {
 
+    var name: String?
 }

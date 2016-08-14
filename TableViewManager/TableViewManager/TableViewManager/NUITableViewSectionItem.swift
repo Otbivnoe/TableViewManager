@@ -15,4 +15,10 @@ enum NUIAccessoryViewType {
 
 struct NUITableViewSectionItem {
 
+    var cellItems: [NUITableViewCellItemProtocol]
+    
+    init(_ cellItems: [NUITableViewCellItemProtocol]) {
+        
+        self.cellItems = cellItems
+    }
 }

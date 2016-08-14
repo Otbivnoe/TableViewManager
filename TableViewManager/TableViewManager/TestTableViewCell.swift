@@ -8,11 +8,39 @@
 
 import UIKit
 
-class TestTableViewCell: UITableViewCell, NUIViewModelBindingProtocol {
+class TestTableViewCell: UITableViewCell {
 
-    typealias T = TestViewModel
+    typealias ViewModelType = TestViewModel
     
-    func configureBy(viewModel: TestViewModel) {
+    var nameLabel: UILabel = {
+       
+        let label = UILabel()
+        label.textColor = UIColor.red
+        label.font = UIFont.systemFont(ofSize: 15)
+        return label
+    }()
+    
+    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+    
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        contentView.addSubview(nameLabel)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func layoutSubviews() {
         
+        super.layoutSubviews()
+        nameLabel.frame = self.bounds
+    }
+    
+}
+
+extension TestTableViewCell : NUIViewModelBindingProtocol {
+    
+    func configureBy(_ viewModel: TestViewModel) {
+        nameLabel.text = viewModel.name
     }
 }

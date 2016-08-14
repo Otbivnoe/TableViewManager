@@ -17,14 +17,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         
-        let viewModel = TestViewModel()
-
-        let cellItem1  = NUITableViewCellItem<TestTableViewCell, TestViewModel>(cellHeightConfigurator: TestHeightConfigurator.self, viewModel: viewModel, fromNib: false)
-        let  cellItem2 = NUITableViewCellItem<TestTableViewCell, TestViewModel>(height: 2, viewModel: viewModel, fromNib: false)
-        
-        cellItem1
-        cellItem2
-        
         return true
     }
 

@@ -8,6 +8,6 @@
 
 protocol NUIViewModelBindingProtocol {
     
-    associatedtype T
-    func configureBy(_ viewModel: T);
+    associatedtype ViewModelType
+    func configureBy(_ viewModel: ViewModelType);
 }
