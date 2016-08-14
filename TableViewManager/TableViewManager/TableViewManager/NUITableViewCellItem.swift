@@ -8,34 +8,35 @@
 
 import UIKit
 
-struct NUITableViewCellItem<CellType: NUIViewModelBindingProtocol, ViewModelType where CellType: UITableViewCell, CellType.ViewModelType == ViewModelType> {
+class NUITableViewCellItem<CellType: NUIViewModelBindingProtocol, ViewModelType where CellType: UITableViewCell, CellType.ViewModelType == ViewModelType> : NSObject, NUITableViewCellItemProtocol {
     
-    var fromNib: Bool
+    private var fromNib: Bool
     var viewModel: ViewModelType
     
     private var heightConfigurator: (UITableView, NSIndexPath, ViewModelType) -> (CGFloat)
     
-    init<HeightConfiguratorType: NUIHeightConfiguratorProtocol where HeightConfiguratorType.T == ViewModelType> (cellHeightConfigurator: HeightConfiguratorType.Type, viewModel: ViewModelType, fromNib: Bool) {
+    //MARK: Initialize
+    
+    convenience init<HeightConfiguratorType: NUIHeightConfiguratorProtocol where HeightConfiguratorType.T == ViewModelType> (cellHeightConfigurator: HeightConfiguratorType.Type, viewModel: ViewModelType, fromNib: Bool) {
         
         self.init(viewModel, fromNib, { tableView, indexPath, viewModel -> CGFloat in
             cellHeightConfigurator.configureHeightBy(tableView: tableView, indexPath: indexPath, viewModel: viewModel)
         })
     }
     
-    init(height: CGFloat, viewModel: ViewModelType, fromNib: Bool) {
+    convenience init(height: CGFloat, viewModel: ViewModelType, fromNib: Bool) {
         
         self.init(viewModel, fromNib, { _,_,_ in height })
     }
     
-    private init(_ viewModel: ViewModelType, _ fromNib: Bool, _ heightConfigurator: (UITableView, NSIndexPath, ViewModelType) -> (CGFloat)) {
+    init(_ viewModel: ViewModelType, _ fromNib: Bool, _ heightConfigurator: (UITableView, NSIndexPath, ViewModelType) -> (CGFloat)) {
         
         self.heightConfigurator = heightConfigurator
         self.viewModel = viewModel
         self.fromNib = fromNib
     }
-}
-
-extension NUITableViewCellItem : NUITableViewCellItemProtocol {
+    
+    //MARK: NUITableViewCellItemProtocol
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         

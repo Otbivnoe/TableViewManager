@@ -16,6 +16,7 @@
 		1129BD2C1D578DCA002FD850 /* TestHeightConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1129BD2B1D578DCA002FD850 /* TestHeightConfigurator.swift */; };
 		1129BD2E1D578DDF002FD850 /* TestViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1129BD2D1D578DDF002FD850 /* TestViewModel.swift */; };
 		11800F311D5E097D00E0752C /* NUITableViewSectionItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11800F301D5E097D00E0752C /* NUITableViewSectionItem.swift */; };
+		11AB0F291D6072FD00AC8909 /* TestCellItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11AB0F281D6072FD00AC8909 /* TestCellItem.swift */; };
 		11FC4D921D57417900629F1C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FC4D911D57417900629F1C /* AppDelegate.swift */; };
 		11FC4D941D57417900629F1C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FC4D931D57417900629F1C /* ViewController.swift */; };
 		11FC4D971D57417900629F1C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11FC4D951D57417900629F1C /* Main.storyboard */; };
@@ -33,6 +34,7 @@
 		1129BD2B1D578DCA002FD850 /* TestHeightConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestHeightConfigurator.swift; sourceTree = "<group>"; };
 		1129BD2D1D578DDF002FD850 /* TestViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestViewModel.swift; sourceTree = "<group>"; };
 		11800F301D5E097D00E0752C /* NUITableViewSectionItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NUITableViewSectionItem.swift; sourceTree = "<group>"; };
+		11AB0F281D6072FD00AC8909 /* TestCellItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestCellItem.swift; sourceTree = "<group>"; };
 		11FC4D8E1D57417900629F1C /* TableViewManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TableViewManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		11FC4D911D57417900629F1C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		11FC4D931D57417900629F1C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -88,6 +90,7 @@
 				1129BD291D578DB9002FD850 /* TestTableViewCell.swift */,
 				1129BD2B1D578DCA002FD850 /* TestHeightConfigurator.swift */,
 				1129BD2D1D578DDF002FD850 /* TestViewModel.swift */,
+				11AB0F281D6072FD00AC8909 /* TestCellItem.swift */,
 				1129BD1E1D577541002FD850 /* TableViewManager */,
 				11FC4D911D57417900629F1C /* AppDelegate.swift */,
 				11FC4D931D57417900629F1C /* ViewController.swift */,
@@ -175,6 +178,7 @@
 				1129BD241D5775ED002FD850 /* NUITableViewCellItemProtocol.swift in Sources */,
 				1129BD2C1D578DCA002FD850 /* TestHeightConfigurator.swift in Sources */,
 				1129BD2E1D578DDF002FD850 /* TestViewModel.swift in Sources */,
+				11AB0F291D6072FD00AC8909 /* TestCellItem.swift in Sources */,
 				1129BD201D577558002FD850 /* NUITableViewManager.swift in Sources */,
 				11FC4D941D57417900629F1C /* ViewController.swift in Sources */,
 				11FC4D921D57417900629F1C /* AppDelegate.swift in Sources */,
