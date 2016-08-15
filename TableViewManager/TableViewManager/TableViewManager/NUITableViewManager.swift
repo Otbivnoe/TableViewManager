@@ -55,7 +55,7 @@ class NUITableViewManager: NSObject, UITableViewDelegate, UITableViewDataSource 
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         
         let cellItem = sectionItems![indexPath.section].cellItems[indexPath.row]
-        cellItem.tableView?(tableView, willDisplay: cell, forRowAt: indexPath)
+        cellItem.tableView(tableView, willDisplay: cell, forRowAt: indexPath)
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -66,23 +66,23 @@ class NUITableViewManager: NSObject, UITableViewDelegate, UITableViewDataSource 
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
 
-        return sectionItems![section].tableView?(tableView, heightForHeaderInSection: section) ?? 0
+        return sectionItems![section].tableView(tableView, heightForHeaderInSection: section)
     }
     
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         
-        return sectionItems![section].tableView?(tableView, heightForFooterInSection: section) ?? 0
+        return sectionItems![section].tableView(tableView, heightForFooterInSection: section)
     }
     
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView?  {
         
-        return sectionItems![section].tableView?(tableView, viewForHeaderInSection: section)
+        return sectionItems![section].tableView(tableView, viewForHeaderInSection: section)
     }
     
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
 
-        return sectionItems![section].tableView?(tableView, viewForFooterInSection: section)
+        return sectionItems![section].tableView(tableView, viewForFooterInSection: section)
     }
     
     
@@ -107,12 +107,12 @@ class NUITableViewManager: NSObject, UITableViewDelegate, UITableViewDataSource 
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         
-        return sectionItems![section].tableView?(tableView, titleForHeaderInSection: section)
+        return sectionItems![section].tableView(tableView, titleForHeaderInSection: section)
     }
     
     func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
         
-        return sectionItems![section].tableView?(tableView, titleForFooterInSection: section)
+        return sectionItems![section].tableView(tableView, titleForFooterInSection: section)
     }
 }
 

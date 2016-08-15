@@ -9,16 +9,43 @@
 import Foundation
 import UIKit
 
-@objc protocol NUITableViewSectionItemProtocol {
+protocol NUITableViewSectionItemProtocol {
 
     var cellItems: [NUITableViewCellItemProtocol] { get set}
     
-    @objc optional func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String?
-    @objc optional func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String?
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String?
+    func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String?
 
-    @objc optional func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat
-    @objc optional func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat
 
-    @objc optional func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView?
-    @objc optional func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView?
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView?
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView?
+}
+
+extension NUITableViewSectionItemProtocol {
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return nil
+    }
+    
+    func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
+        return nil
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 0
+    }
+    
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 0
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        return nil
+    }
+    
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        return nil
+    }
 }
