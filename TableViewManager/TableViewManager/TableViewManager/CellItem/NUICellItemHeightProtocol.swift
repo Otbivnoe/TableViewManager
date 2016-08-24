@@ -11,6 +11,6 @@ import UIKit
 
 public protocol NUICellItemHeightProtocol {
     
-    associatedtype T
-    func configureHeightBy(tableView: UITableView, indexPath: IndexPath, viewModel: T?) -> CGFloat
+    associatedtype ViewModelType
+    func configureHeightBy(tableView: UITableView, indexPath: IndexPath, viewModel: ViewModelType?) -> CGFloat
 }

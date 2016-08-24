@@ -86,7 +86,6 @@ open class NUITableViewManager: NSObject, UITableViewDelegate, UITableViewDataSo
         return sectionItems![section].tableView(tableView, viewForFooterInSection: section)
     }
     
-    
     //MARK: UITableViewDataSource
     
     public func numberOfSections(in tableView: UITableView) -> Int {
