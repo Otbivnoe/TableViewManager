@@ -8,10 +8,11 @@
 
 import UIKit
 
-class NUITableViewManager: NSObject, UITableViewDelegate, UITableViewDataSource {
+open class NUITableViewManager: NSObject, UITableViewDelegate, UITableViewDataSource, UITableViewDataSourcePrefetching {
 
-    unowned var tableView: UITableView
-    var sectionItems:      [NUITableViewSectionItemProtocol]? {
+    public unowned var tableView: UITableView
+    
+    public var sectionItems: [NUITableViewSectionItemProtocol]? {
         willSet {
             registerSectionItems(newValue ?? [])
         }
@@ -20,16 +21,17 @@ class NUITableViewManager: NSObject, UITableViewDelegate, UITableViewDataSource 
         }
     }
     
-    init(tableView: UITableView) {
+    public init(tableView: UITableView) {
         
         self.tableView = tableView
         super.init()
         
         self.tableView.delegate = self
         self.tableView.dataSource = self
+        self.tableView.prefetchDataSource = self
     }
     
-    func insertCellItems(_ cellItems: [NUITableViewCellItemProtocol], for sectionItem: NUITableViewSectionItem, at indexSet: IndexSet) {
+    open func insertCellItems(_ cellItems: [NUITableViewCellItemProtocol], for sectionItem: NUITableViewSectionItem, at indexSet: IndexSet) {
         
     }
     
@@ -49,38 +51,37 @@ class NUITableViewManager: NSObject, UITableViewDelegate, UITableViewDataSource 
         }
     }
     
-    
     //MARK: UITableViewDelegate
     
-    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+    public func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         
         let cellItem = sectionItems![indexPath.section].cellItems[indexPath.row]
         cellItem.tableView(tableView, willDisplay: cell, forRowAt: indexPath)
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
         let cellItem = sectionItems![indexPath.section].cellItems[indexPath.row]
         return cellItem.tableView(tableView, heightForRowAt: indexPath)
     }
     
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+    public func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
 
         return sectionItems![section].tableView(tableView, heightForHeaderInSection: section)
     }
     
-    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+    public func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         
         return sectionItems![section].tableView(tableView, heightForFooterInSection: section)
     }
     
     
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView?  {
+    public func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView?  {
         
         return sectionItems![section].tableView(tableView, viewForHeaderInSection: section)
     }
     
-    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+    public func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
 
         return sectionItems![section].tableView(tableView, viewForFooterInSection: section)
     }
@@ -88,31 +89,42 @@ class NUITableViewManager: NSObject, UITableViewDelegate, UITableViewDataSource 
     
     //MARK: UITableViewDataSource
     
-    func numberOfSections(in tableView: UITableView) -> Int {
+    public func numberOfSections(in tableView: UITableView) -> Int {
         
         return (sectionItems?.count) ??  0
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         return sectionItems![section].cellItems.count;
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cellItem = sectionItems![indexPath.section].cellItems[indexPath.row]
         let cell = cellItem.tableView(tableView, cellForRowAt: indexPath)
         return cell
     }
     
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    public func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         
         return sectionItems![section].tableView(tableView, titleForHeaderInSection: section)
     }
     
-    func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
+    public func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
         
         return sectionItems![section].tableView(tableView, titleForFooterInSection: section)
+    }
+    
+    //MARK: UITableViewDataSourcePrefetching
+    
+    public func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
+        
+    }
+    
+
+    public func tableView(_ tableView: UITableView, cancelPrefetchingForRowsAt indexPaths: [IndexPath]) {
+        
     }
 }
 

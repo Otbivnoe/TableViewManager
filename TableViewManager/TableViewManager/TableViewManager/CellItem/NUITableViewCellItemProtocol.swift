@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-protocol NUITableViewCellItemProtocol {
+public protocol NUITableViewCellItemProtocol {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
@@ -20,19 +20,19 @@ protocol NUITableViewCellItemProtocol {
 
 extension NUITableViewCellItemProtocol {
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         return UITableViewCell()
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 0
     }
     
-    func registerCellForTableView(_ tableView: UITableView) {
+    public func registerCellForTableView(_ tableView: UITableView) {
         
     }
     
-    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+    public func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         
     }
 }

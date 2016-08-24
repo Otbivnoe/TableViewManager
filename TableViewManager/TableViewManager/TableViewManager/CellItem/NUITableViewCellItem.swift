@@ -8,29 +8,29 @@
 
 import UIKit
 
-class NUITableViewCellItem<CellType: NUIViewModelBindingProtocol, ViewModelType where CellType: UITableViewCell, CellType.ViewModelType == ViewModelType> : NUITableViewCellItemProtocol {
+open class NUITableViewCellItem<CellType: NUIViewModelBindingProtocol, ViewModelType> : NUITableViewCellItemProtocol where CellType: UITableViewCell, CellType.ViewModelType == ViewModelType {
+    
+    public var viewModel: ViewModelType
     
     private var fromNib: Bool
-    var viewModel: ViewModelType
-    
-    private var heightConfigurator: (UITableView, NSIndexPath, ViewModelType) -> (CGFloat)
+    private var heightConfigurator: (UITableView, IndexPath, ViewModelType) -> (CGFloat)
     
     //MARK: Initialize
     
-    convenience init<HeightConfiguratorType: NUICellItemHeightProtocol where HeightConfiguratorType.T == ViewModelType>
-        (cellHeightConfigurator: HeightConfiguratorType, viewModel: ViewModelType, fromNib: Bool = false) {
+    public convenience init<HeightConfiguratorType: NUICellItemHeightProtocol>(cellHeightConfigurator: HeightConfiguratorType, viewModel: ViewModelType, fromNib: Bool = false)
+        where HeightConfiguratorType.T == ViewModelType {
         
         self.init(viewModel, fromNib, { tableView, indexPath, viewModel -> CGFloat in
             cellHeightConfigurator.configureHeightBy(tableView: tableView, indexPath: indexPath, viewModel: viewModel)
         })
     }
     
-    convenience init(height: CGFloat, viewModel: ViewModelType, fromNib: Bool = false) {
+    public convenience init(height: CGFloat, viewModel: ViewModelType, fromNib: Bool = false) {
         
         self.init(viewModel, fromNib, { _,_,_ in height })
     }
     
-    init(_ viewModel: ViewModelType, _ fromNib: Bool, _ heightConfigurator: (UITableView, NSIndexPath, ViewModelType) -> (CGFloat)) {
+    init(_ viewModel: ViewModelType, _ fromNib: Bool, _ heightConfigurator: @escaping (UITableView, IndexPath, ViewModelType) -> (CGFloat)) {
         
         self.heightConfigurator = heightConfigurator
         self.viewModel = viewModel
@@ -39,21 +39,21 @@ class NUITableViewCellItem<CellType: NUIViewModelBindingProtocol, ViewModelType 
     
     //MARK: NUITableViewCellItemProtocol
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: String(CellType.self), for: indexPath) as! CellType
+        let cell = tableView.dequeueReusableCell(withIdentifier: "\(CellType.self)", for: indexPath) as! CellType
         cell.configureBy(viewModel)
         return cell
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
         return heightConfigurator(tableView, indexPath, viewModel)
     }
     
-    func registerCellForTableView(_ tableView: UITableView) {
+    public func registerCellForTableView(_ tableView: UITableView) {
         
-        let identifier = String(CellType.self)
+        let identifier = "\(CellType.self)"
         if fromNib {
             tableView.register(UINib.init(nibName: identifier, bundle: nil), forCellReuseIdentifier: identifier)
         } else {

@@ -9,8 +9,8 @@
 import Foundation
 import UIKit
 
-protocol NUICellItemHeightProtocol {
+public protocol NUICellItemHeightProtocol {
     
     associatedtype T
-    func configureHeightBy(tableView: UITableView, indexPath: NSIndexPath, viewModel: T?) -> CGFloat
+    func configureHeightBy(tableView: UITableView, indexPath: IndexPath, viewModel: T?) -> CGFloat
 }

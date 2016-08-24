@@ -42,40 +42,17 @@ class ViewController: UIViewController {
 
     func configurateSectionItems() {
         
-        var viewModel1 = TestViewModel()
-        viewModel1.name = "Test1"
-
-        var viewModel2 = TestViewModel()
-        viewModel2.name = "Test2"
-        
-        var viewModel3 = TestViewModel()
-        viewModel3.name = "Test3"
-        
-        let cellItem1 = NUITableViewCellItem<TestTableViewCell, TestViewModel>(height: 50, viewModel: viewModel1)
-        let cellItem2 = TestCellItem(height: 50, viewModel: viewModel2)
-        let cellItem3 = TestCellItem(cellHeightConfigurator: TestHeightConfigurator(), viewModel: viewModel3)
-
         var cellItems = [NUITableViewCellItemProtocol]()
-        cellItems.append(cellItem1)
-        cellItems.append(cellItem2)
-        cellItems.append(cellItem3)
         
-        
+        for index in 0...200 {
+            var viewModel = TestViewModel()
+            viewModel.name = "Test \(index)"
+
+            let cellItem = TestCellItem(height: 50, viewModel: viewModel)
+            cellItems.append(cellItem)
+        }
+
         let sectionItem = NUITableViewSectionItem(cellItems)
-        
-        let view = UIView()
-        view.backgroundColor = UIColor.red
-        
-        sectionItem.configureAccessoryViewType(.NUIAccessoryViewTypeHeader, configurate: { section in
-            section.heightConfigurator = TestHeightConfigurator()
-            section.accessoryView = view
-        })
-        
-        sectionItem.configureAccessoryViewType(.NUIAccessoryViewTypeFooter, configurate: { section in
-            section.height = 50
-            section.title = "Footer"
-        })
-        
         tableViewManager.sectionItems = [sectionItem]
     }
 

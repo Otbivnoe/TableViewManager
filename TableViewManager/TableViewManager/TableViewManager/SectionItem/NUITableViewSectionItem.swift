@@ -8,23 +8,23 @@
 
 import UIKit
 
-enum NUIAccessoryViewType {
+public enum NUIAccessoryViewType {
     case NUIAccessoryViewTypeFooter
     case NUIAccessoryViewTypeHeader
 }
 
-class NUITableViewSectionItem: NUITableViewSectionItemProtocol {
+open class NUITableViewSectionItem: NUITableViewSectionItemProtocol {
 
-    var cellItems: [NUITableViewCellItemProtocol]
+    public var cellItems: [NUITableViewCellItemProtocol]
     
-    var title: String?
-    var accessoryView: UIView?
-    var heightConfigurator: NUISectionItemHeightProtocol?
-    var height: CGFloat?
+    public var title: String?
+    public var accessoryView: UIView?
+    public var heightConfigurator: NUISectionItemHeightProtocol?
+    public var height: CGFloat?
     
     private var configurator = [NUIAccessoryViewType : NUITableViewSectionItem]()
     
-    convenience init() {
+    public convenience init() {
         
         self.init([])
     }
@@ -34,7 +34,7 @@ class NUITableViewSectionItem: NUITableViewSectionItemProtocol {
         self.cellItems = cellItems
     }
     
-    func configureAccessoryViewType(_ type: NUIAccessoryViewType, configurate:(NUITableViewSectionItem) -> ()) {
+    public func configureAccessoryViewType(_ type: NUIAccessoryViewType, configurate:(NUITableViewSectionItem) -> ()) {
         
         let tempSectionItem: NUITableViewSectionItem = NUITableViewSectionItem()
         configurate(tempSectionItem)
@@ -43,41 +43,41 @@ class NUITableViewSectionItem: NUITableViewSectionItemProtocol {
     
     //MARK: NUITableViewSectionItemProtocol
     
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    public func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         
         return configurator[.NUIAccessoryViewTypeHeader]?.title
     }
     
-    func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
+    public func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
         
         return configurator[.NUIAccessoryViewTypeFooter]?.title
     }
     
     
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+    public func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         
         return heightForAccessoryType(.NUIAccessoryViewTypeHeader, forTableView: tableView, atSectionIndex: section)
     }
     
-    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+    public func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         
         return heightForAccessoryType(.NUIAccessoryViewTypeFooter, forTableView: tableView, atSectionIndex: section)
     }
     
     
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+    public func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         
         return configurator[.NUIAccessoryViewTypeHeader]?.accessoryView
     }
     
-    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+    public func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         
         return configurator[.NUIAccessoryViewTypeFooter]?.accessoryView
     }
     
     //MARK: Private
     
-    func heightForAccessoryType(_ type: NUIAccessoryViewType, forTableView tableView: UITableView, atSectionIndex sectionIndex: Int) -> CGFloat {
+    private func heightForAccessoryType(_ type: NUIAccessoryViewType, forTableView tableView: UITableView, atSectionIndex sectionIndex: Int) -> CGFloat {
         
         guard let sectionItem = configurator[type] else {
             return 0

@@ -6,7 +6,7 @@
 //  Copyright © 2016 Nikita. All rights reserved.
 //
 
-protocol NUIViewModelBindingProtocol {
+public protocol NUIViewModelBindingProtocol {
     
     associatedtype ViewModelType
     func configureBy(_ viewModel: ViewModelType);

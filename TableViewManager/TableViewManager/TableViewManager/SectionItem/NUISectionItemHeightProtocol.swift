@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol NUISectionItemHeightProtocol {
+public protocol NUISectionItemHeightProtocol {
     
     func configureHeightBy(tableView: UITableView, heightForSectionIndex index: Int) -> CGFloat
 }
