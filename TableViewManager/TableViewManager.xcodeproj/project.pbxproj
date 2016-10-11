@@ -11,8 +11,8 @@
 		1129BD2C1D578DCA002FD850 /* TestHeightConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1129BD2B1D578DCA002FD850 /* TestHeightConfigurator.swift */; };
 		1129BD2E1D578DDF002FD850 /* TestViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1129BD2D1D578DDF002FD850 /* TestViewModel.swift */; };
 		112C0E0B1D60B43B0008D5DD /* TestHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112C0E0A1D60B43B0008D5DD /* TestHeaderView.swift */; };
+		1130CF091DAD3D5A00F47377 /* TableViewBaseCellItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1130CF081DAD3D5A00F47377 /* TableViewBaseCellItem.swift */; };
 		11AB0F291D6072FD00AC8909 /* TestCellItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11AB0F281D6072FD00AC8909 /* TestCellItem.swift */; };
-		11AB0F5C1D60A60500AC8909 /* NUICellItemHeightProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11AB0F531D60A60500AC8909 /* NUICellItemHeightProtocol.swift */; };
 		11AB0F5D1D60A60500AC8909 /* NUITableViewCellItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11AB0F541D60A60500AC8909 /* NUITableViewCellItem.swift */; };
 		11AB0F5E1D60A60500AC8909 /* NUITableViewCellItemProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11AB0F551D60A60500AC8909 /* NUITableViewCellItemProtocol.swift */; };
 		11AB0F5F1D60A60500AC8909 /* NUITableViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11AB0F561D60A60500AC8909 /* NUITableViewManager.swift */; };
@@ -32,8 +32,8 @@
 		1129BD2B1D578DCA002FD850 /* TestHeightConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestHeightConfigurator.swift; sourceTree = "<group>"; };
 		1129BD2D1D578DDF002FD850 /* TestViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestViewModel.swift; sourceTree = "<group>"; };
 		112C0E0A1D60B43B0008D5DD /* TestHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestHeaderView.swift; sourceTree = "<group>"; };
+		1130CF081DAD3D5A00F47377 /* TableViewBaseCellItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewBaseCellItem.swift; sourceTree = "<group>"; };
 		11AB0F281D6072FD00AC8909 /* TestCellItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestCellItem.swift; sourceTree = "<group>"; };
-		11AB0F531D60A60500AC8909 /* NUICellItemHeightProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NUICellItemHeightProtocol.swift; sourceTree = "<group>"; };
 		11AB0F541D60A60500AC8909 /* NUITableViewCellItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NUITableViewCellItem.swift; sourceTree = "<group>"; };
 		11AB0F551D60A60500AC8909 /* NUITableViewCellItemProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NUITableViewCellItemProtocol.swift; sourceTree = "<group>"; };
 		11AB0F561D60A60500AC8909 /* NUITableViewManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NUITableViewManager.swift; sourceTree = "<group>"; };
@@ -75,8 +75,8 @@
 		11AB0F521D60A60500AC8909 /* CellItem */ = {
 			isa = PBXGroup;
 			children = (
-				11AB0F531D60A60500AC8909 /* NUICellItemHeightProtocol.swift */,
 				11AB0F541D60A60500AC8909 /* NUITableViewCellItem.swift */,
+				1130CF081DAD3D5A00F47377 /* TableViewBaseCellItem.swift */,
 				11AB0F551D60A60500AC8909 /* NUITableViewCellItemProtocol.swift */,
 			);
 			path = CellItem;
@@ -206,8 +206,8 @@
 				11AB0F5D1D60A60500AC8909 /* NUITableViewCellItem.swift in Sources */,
 				11FC4D941D57417900629F1C /* ViewController.swift in Sources */,
 				112C0E0B1D60B43B0008D5DD /* TestHeaderView.swift in Sources */,
-				11AB0F5C1D60A60500AC8909 /* NUICellItemHeightProtocol.swift in Sources */,
 				11AB0F621D60A60500AC8909 /* NUITableViewSectionItem.swift in Sources */,
+				1130CF091DAD3D5A00F47377 /* TableViewBaseCellItem.swift in Sources */,
 				11AB0F601D60A60500AC8909 /* NUIViewModelBindingProtocol.swift in Sources */,
 				11AB0F5F1D60A60500AC8909 /* NUITableViewManager.swift in Sources */,
 				11FC4D921D57417900629F1C /* AppDelegate.swift in Sources */,
