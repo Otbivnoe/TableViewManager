@@ -10,19 +10,17 @@ import UIKit
 
 class TestTableViewCell: UITableViewCell {
 
-    typealias ViewModelType = TestViewModel
-    
     var nameLabel: UILabel = {
-       
         let label = UILabel()
         label.textColor = UIColor.red
         label.font = UIFont.systemFont(ofSize: 15)
+        label.text = "SUPER LABEL"
         return label
     }()
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
-    
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        
         contentView.backgroundColor = UIColor.yellow
         contentView.addSubview(nameLabel)
     }
@@ -32,16 +30,9 @@ class TestTableViewCell: UITableViewCell {
     }
     
     override func layoutSubviews() {
-        
         super.layoutSubviews()
+        
         nameLabel.frame = self.bounds
     }
     
-}
-
-extension TestTableViewCell : NUIViewModelBindingProtocol {
-    
-    func configureBy(_ viewModel: TestViewModel) {
-        nameLabel.text = viewModel.name
-    }
 }

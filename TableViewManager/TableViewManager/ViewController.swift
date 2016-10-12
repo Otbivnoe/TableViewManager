@@ -11,13 +11,13 @@ import UIKit
 class ViewController: UIViewController {
 
     var tableView:          UITableView = UITableView()
-    var tableViewManager:   NUITableViewManager
+    var tableViewManager:   TableViewDisposer
     
     //MARK: Initialize
     
     required init?(coder aDecoder: NSCoder) {
         
-        tableViewManager = NUITableViewManager(tableView: tableView)
+        tableViewManager = TableViewDisposer(tableView: tableView)
         super.init(coder: aDecoder)
     }
     
@@ -42,17 +42,14 @@ class ViewController: UIViewController {
 
     func configurateSectionItems() {
         
-        var cellItems = [NUITableViewCellItemProtocol]()
+        var cellItems = [TableViewCellItemType]()
         
-        for index in 0...200 {
-            var viewModel = TestViewModel()
-            viewModel.name = "Test \(index)"
-
-            let cellItem = TestCellItem(height: 50, viewModel: viewModel)
+        for _ in 0...200 {
+            let cellItem = TestCellItem()
             cellItems.append(cellItem)
         }
 
-        let sectionItem = NUITableViewSectionItem(cellItems)
+        let sectionItem = TableViewSectionItem(cellItems)
         tableViewManager.sectionItems = [sectionItem]
     }
 

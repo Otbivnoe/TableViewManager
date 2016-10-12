@@ -1,5 +1,5 @@
 //
-//  NUITableViewManager.swift
+//  TableViewDisposer.swift
 //  TableViewManager
 //
 //  Created by Nikita on 07/08/16.
@@ -8,22 +8,18 @@
 
 import UIKit
 
-open class NUITableViewManager: NSObject, UITableViewDelegate, UITableViewDataSource, UITableViewDataSourcePrefetching {
+public final class TableViewDisposer: NSObject {
 
-    public unowned var tableView: UITableView
+    fileprivate unowned var tableView: UITableView
     
-    public var sectionItems: [NUITableViewSectionItemProtocol]? {
-        willSet {
-            registerSectionItems(newValue ?? [])
-        }
-        didSet {
-            tableView.reloadData()
-        }
+    public var sectionItems: [TableViewSectionItemType]? {
+        willSet { registerSectionItems(newValue ?? []) }
+        didSet  { tableView.reloadData() }
     }
     
     public init(tableView: UITableView) {
-        
         self.tableView = tableView
+        
         super.init()
         
         self.tableView.delegate = self
@@ -31,27 +27,29 @@ open class NUITableViewManager: NSObject, UITableViewDelegate, UITableViewDataSo
         self.tableView.prefetchDataSource = self
     }
     
-    open func insertCellItems(_ cellItems: [NUITableViewCellItemProtocol], for sectionItem: NUITableViewSectionItem, at indexSet: IndexSet) {
+    //MARK: Actions
+    
+    public func insertCellItems(_ cellItems: [TableViewCellItemType], for sectionItem: TableViewSectionItemType, at indexSet: IndexSet) {
         
     }
     
     //MARK: Private
     
-    private func registerSectionItems(_ sectionItems: [NUITableViewSectionItemProtocol]) {
-        
+    private func registerSectionItems(_ sectionItems: [TableViewSectionItemType]) {
         for sectionItem in sectionItems {
             registerCellItems(sectionItem.cellItems)
         }
     }
     
-    private func registerCellItems(_ cellItems: [NUITableViewCellItemProtocol]) {
-        
+    private func registerCellItems(_ cellItems: [TableViewCellItemType]) {
         for cellItem in cellItems {
             cellItem.registerCellForTableView(tableView)
         }
     }
-    
-    //MARK: UITableViewDelegate
+}
+
+
+extension TableViewDisposer : UITableViewDelegate {
     
     public func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         let cellItem = sectionItems![indexPath.section].cellItems[indexPath.row]
@@ -78,8 +76,10 @@ open class NUITableViewManager: NSObject, UITableViewDelegate, UITableViewDataSo
     public func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         return sectionItems![section].tableView(tableView, viewForFooterInSection: section)
     }
-    
-    //MARK: UITableViewDataSource
+}
+
+
+extension TableViewDisposer : UITableViewDataSource {
     
     public func numberOfSections(in tableView: UITableView) -> Int {
         return (sectionItems?.count) ??  0
@@ -102,15 +102,16 @@ open class NUITableViewManager: NSObject, UITableViewDelegate, UITableViewDataSo
     public func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
         return sectionItems![section].tableView(tableView, titleForFooterInSection: section)
     }
-    
-    //MARK: UITableViewDataSourcePrefetching
+}
+
+
+extension TableViewDisposer : UITableViewDataSourcePrefetching {
     
     public func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
         
     }
-
+    
     public func tableView(_ tableView: UITableView, cancelPrefetchingForRowsAt indexPaths: [IndexPath]) {
         
     }
 }
-

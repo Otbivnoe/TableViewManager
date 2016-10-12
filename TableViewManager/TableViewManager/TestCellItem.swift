@@ -8,6 +8,20 @@
 
 import UIKit
 
-class TestCellItem: NUITableViewCellItem<TestTableViewCell, TestViewModel> {
+class TestCellItem: TableViewCellItemType {
+    
+    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell")
+        return cell!
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 50
+    }
+    
+    func registerCellForTableView(_ tableView: UITableView) {
+        tableView.register(TestTableViewCell.self, forCellReuseIdentifier: "cell")
+    }
 
+    
 }
